@@ -1,0 +1,23 @@
+<h1>Cat</h1>
+
+<%= link_to "All Cats", cats_url %>
+
+<table>
+  <th> <%= @cat.name %>  </th>
+  <tr>
+    <td> Sex: </td>
+    <td> <%= @cat.sex %> </td>
+  </tr>
+  <tr>
+    <td> Birthdate: </td>
+    <td><%= @cat.birth_date %> </td>
+  </tr>
+  <tr>
+    <td> Color: </td>
+    <td> <%= @cat.color %></td>
+  </tr>
+  <tr>
+    <td> Description: </td>
+    <td><%= @cat.description %> </td>
+  </tr>
+</table>

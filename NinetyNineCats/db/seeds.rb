@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Cat.destroy_all
+
+Cat.create!(birth_date: Date.new(2015,2,3), color: 'blue', name: 'puddles', sex: 'F')
+
+# validates :birth_date, presence: true
+# validates :color, inclusion: {in: COLORS}, presence: true
+# validates :name, presence: true
+# validates :sex, inclusion: {in: %w(M F)}, length: {is: 1}, presence: true
