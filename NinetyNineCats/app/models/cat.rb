@@ -6,6 +6,8 @@ class Cat < ApplicationRecord
   validates :name, presence: true
   validates :sex, inclusion: {in: %w(M F)}, length: {is: 1}, presence: true
 
+  has_many :cat_rental_requests,
+  dependent: :destroy
 
   def age
     Time.now - birth_date

@@ -1,7 +1,7 @@
-<h1>Cat</h1>
+<h1><%= @cat.name %>'s Information</h1>
 
 <%= link_to "All Cats", cats_url %>
-
+<%= link_to "Edit Cat", edit_cat_url(@cat) %>
 <table>
   <th> <%= @cat.name %>  </th>
   <tr>

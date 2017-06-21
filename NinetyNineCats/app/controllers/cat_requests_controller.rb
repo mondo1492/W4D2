@@ -1,0 +1,2 @@
+class CatRequestsController < ApplicationController
+end

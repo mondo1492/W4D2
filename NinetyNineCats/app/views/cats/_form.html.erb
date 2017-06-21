@@ -1,0 +1,43 @@
+
+<% _action = cat.id ? cat_url(cat) : cats_url %>
+<% _verb = cat.id ? "PATCH" : "POST" %>
+
+
+<form action="<%= _action %>" method="post">
+  <input type="hidden" name="_method" value="<%= _verb %>">
+      <label>
+        <strong>Name:</strong>
+        <input id="name" type="text" name="cat[name]" value="<%= cat.name %>">
+      </label>
+      <br>
+      <label>
+        <strong>Sex:</strong>
+          <input type="radio" name="cat[sex]" value="M" <%= cat.sex == "M" ? "checked" : "" %>> Male
+          <input type="radio" name="cat[sex]" value="F" <%= cat.sex == "F" ? "checked" : "" %>> Female
+      </label>
+      <label>
+        <strong>Birthday:</strong>
+        <input id="birth_date" type="date" name="cat[birth_date]" value="<%= cat.birth_date %>">
+      </label>
+      <br>
+      <label>
+        <strong>Color:</strong>
+        <select name="cat[color]" value ="<%= cat.color %>">
+          <option selected disabled hidden>Choose here</option>
+          <option  <%= cat.color == "red" ? "selected" : "" %> value = "red">Red</option>
+          <option  <%= cat.color == "orange" ? "selected" : "" %> value = "orange">Orange</option>
+          <option  <%= cat.color == "yellow" ? "selected" : "" %> value = "yellow">Yellow</option>
+          <option  <%= cat.color == "blue" ? "selected" : "" %> value = "blue">Blue</option>
+        </select>
+      </label>
+      <br>
+      <label>
+        <strong>Description:</strong>
+        <textarea name="cat[description]">
+          <%= cat.description %>
+        </textarea>
+      </label>
+
+      <br>
+      <input type="submit"/>
+  </form>
